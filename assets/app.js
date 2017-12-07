@@ -1,4 +1,4 @@
-//create topics array
+//creates tv show topics array
 var topics = ["new girl", "parks and recreation", "the office", "stranger things", "bobs burgers", "arrested development", "doctor who", "game of thrones", "brooklyn nine nine", "broad city"];
 
 //on click of a button, page grabs 10 static, non-animated gif images from GIPHY API
@@ -21,6 +21,7 @@ $("#buttons").on("click", ".tvshow", function(){
 				
 				var p = $("<p>").text("Rating: " + rating);
 				
+				//display gif
 				var tvshowImage = $("<img>");
 				tvshowImage.attr("src", results[i].images.fixed_height_still.url);
 				tvshowImage.attr("data-still", results[i].images.fixed_height_still.url);
@@ -31,8 +32,6 @@ $("#buttons").on("click", ".tvshow", function(){
 				gifDiv.append(tvshowImage);
 
 				$("#gifs-appear-here").prepend(gifDiv);
-
-				//$("#gifs-appear-here").empty();
 			}
 		});	
 });
@@ -65,6 +64,7 @@ $("#add-tvshow").on("click", function(event) {
 
 	renderButtons();
 
+	//this clears the input box after the user submits their answer
 	$("#tvshow-input").val("");
 
 });        
@@ -75,12 +75,13 @@ $("#gifs-appear-here").on("click", ".gif", function() {
 	if (gifState === "still") {
 		$(this).attr("src", $(this).attr("data-animate"));
 		$(this).attr("data-state", "animate")
+//on click again, stop playing	
 	} else {
 		$(this).attr("src", $(this).attr("data-still"));
 		$(this).attr("data-state", "still");
 	}
 })
-//on click again, stop playing
+
 renderButtons();
 	
 
