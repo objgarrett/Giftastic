@@ -3,9 +3,19 @@ body {
 	font-family: "Arial";
 }
 
+.jumbotron {
+	background-color: #81a5a9;
+	color: #ffffff;
+	text-align: center;
+}
+
 button, #add-tvshow {
 	background-color: #81a5a9;
 	color: #ffffff;
 	border-radius:4px;
 	margin: 5px;
+}
+
+#gifs-appear-here {
+	float: left;
 }
